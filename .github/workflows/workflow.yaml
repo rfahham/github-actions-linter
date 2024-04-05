@@ -1,10 +1,12 @@
 name: Test Workflow 
 
-on:
-  push: # Push event
-    branches: # On branches 
-      - 'releases/**'
-      - 'main'
+# on:
+#   push: # Push event
+#     branches: # On branches 
+#       - 'releases/**'
+#       - 'main'
+
+on: [pull_request, push, issues, issue_comment]
 
 jobs:
   hello_world: # Define the job
