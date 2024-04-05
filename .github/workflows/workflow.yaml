@@ -1,0 +1,19 @@
+name: Test Workflow 
+
+on:
+  push: # Push event
+    branches: # On branches 
+      - 'releases/**'
+      - 'master'
+
+jobs:
+  hello_world: # Define the job
+    runs-on: ubuntu-latest # Specify the runner to run the job on
+    name: Lint code
+    steps:
+      - name: Run Linter
+        uses: github/super-linter@v3 # Use Github Super Linter repository
+        with: # Input fot the action
+          some_api_key: ${{ secrets.api_key }} # Get the API key from repository secrets
+      - name: Print IPv4 # Some random command
+        run: ifconfig -a # Run ifconfig command
