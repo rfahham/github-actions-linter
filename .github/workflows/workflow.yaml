@@ -4,7 +4,7 @@ on:
   push: # Push event
     branches: # On branches 
       - 'releases/**'
-      - 'master'
+      - 'main'
 
 jobs:
   hello_world: # Define the job
